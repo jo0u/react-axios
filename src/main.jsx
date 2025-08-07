@@ -5,15 +5,21 @@ import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 
 import App from "./App.jsx";
 
+//páginas
+import Home from "./router/Home.jsx";
+import NewPost from "./router/NewPost.jsx";
+
 const router = createBrowserRouter([
   {
     element: <App />,
     children: [
       {
         path: "/",
+        element: <Home />,
       },
       {
         path: "/new",
+        element: <NewPost />,
       },
     ],
   },
@@ -21,6 +27,6 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </StrictMode>
 );
